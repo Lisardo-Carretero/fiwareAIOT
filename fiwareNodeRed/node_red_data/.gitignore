@@ -1,0 +1,6 @@
+**.npm
+**lib
+**node_modules
+*.config*
+*package.json
+settings.js
