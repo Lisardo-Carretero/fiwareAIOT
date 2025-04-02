@@ -1,10 +1,21 @@
 services:
   node-red:
-    image: nodered/node-red:latest
-    container_name: node-red
-    restart: always
-    user: "0"
-    ports:
-      - "1880:1880"
+    image: nodered/node-red:3.1.0
     volumes:
       - ./node_red_data:/data
+    ports:
+      - 1880:1880
+
+  orion:
+    image: fiware/orion:3.10.1
+    restart: always
+    ports:
+      - 1026:1026
+    depends_on:
+      - mongo
+    command: -dbhost mongo
+
+  mongo:
+    image: mongo:4.4
+    restart: always
+    command: --nojournal
