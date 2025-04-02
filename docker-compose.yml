@@ -1,0 +1,15 @@
+services:
+  orion:
+    image: telefonicaiot/fiware-orion
+    ports:
+      - "1026:1026"
+    command: -dbURI mongodb+srv://admin:7snxix7HBZEG8jAAx@iiot-lisardo.tsii9.mongodb.net/?retryWrites=true&w=majority&appName=IIot-Lisardo
+    environment:
+      - MONGO_HOST=mongo
+      - MONGO_PORT=27017
+      - MONGO_USER=admin
+      - MONGO_PASS=7snxix7HBZEG8jAAx
+      - MONGO_DB=orion
+
+volumes:
+  mongo-data:
