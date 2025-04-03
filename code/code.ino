@@ -1,7 +1,7 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
-
+#include "env.h"
 // region  GPRS
 // https://randomnerdtutorials.com/lilygo-t-sim7000g-esp32-lte-gprs-gps/
 // SerialAT.begin(UART_BAUD, SERIAL_8N1, PIN_RX, PIN_TX);
@@ -21,8 +21,16 @@ const char *ssid = SSID_WIFI;
 const char *password = PASSWORD_WIFI;
 
 // Configuración de FIWARE Orion
+// El endpoint
 const char *orionEndpoint = "http://orion:1026/v2/entities";
-const char *fiwareServicePath = "/";
+// https://fiware-orion.readthedocs.io/en/master/orion-api.html#multi-tenancy
+const char *fiwareServicePath = "/Almeria/AIoT/IFAPA";
+
+// Son de ejemplo cambiar por las que haya que usar en el bucle o como se acaben leyendo los datos
+const String placa = "AIOT_ESP32";
+const String estacion = "EstacionIOTInvernadero";
+const String nombreSensor = "temperature";
+const String tipoSensor = "Number";
 
 float getTemperature() {
   // Aquí iría el código para leer el sensor de temperatura
@@ -92,10 +100,7 @@ void sendToFiware(const String &jsonOutput, const String &fiwareServicePath = "/
 void loop() {
   StaticJsonDocument<1024> doc;
   // Datos de prueba
-  String placa = "AIOT_ESP32";
-  String estacion = "EstacionIOTInvernadero";
-  String nombreSensor = "temperature";
-  String tipoSensor = "Number";
+
   float valor = getTemperature();  // Simulación de lectura de temperatura
 
   // Llamar al método buildJsonDocument
