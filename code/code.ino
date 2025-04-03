@@ -54,8 +54,8 @@ void buildJsonDocument(JsonDocument &doc, const String &placa, const String &est
 
 // Le pongo como default el path de la entidad, pero lo puedo cambiar al momento de llamar a la función
 void sendToFiware(const String &jsonOutput, const String &fiwareServicePath = "/")
-{
-    println("Enviando datos a FIWARE Orion...");
+
+    Serial.println("Enviando datos a FIWARE Orion...");
     Serial.println("JSON con formato :");
     Serial.println(jsonOutput);
 
