@@ -31,6 +31,22 @@
         "env": []
     },
     {
+        "id": "32280c71f0756df8",
+        "type": "tab",
+        "label": "NGSI subscription",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f999ca303cfa8909",
+        "type": "tab",
+        "label": "SuscripcionFiware",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "a180ca4ca3ddad80",
         "type": "tab",
         "label": "NGSI attribute value",
@@ -50,14 +66,6 @@
         "id": "09c250656932026f",
         "type": "tab",
         "label": "NGSI Batch update",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "32280c71f0756df8",
-        "type": "tab",
-        "label": "NGSI subscription",
         "disabled": false,
         "info": "",
         "env": []
@@ -163,6 +171,195 @@
         "service": "openiot",
         "idmEndpoint": "",
         "idmType": "none"
+    },
+    {
+        "id": "5f740743e2773a8c",
+        "type": "ui_tab",
+        "name": "Agua",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6b9a7bf9e48286c1",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "89a92138b809a173",
+        "type": "ui_group",
+        "name": "DH11",
+        "tab": "1d521f9e5ab428e9",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "b66564dd31c16395",
+        "type": "ui_tab",
+        "name": "Conductividad",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8c4b9a341a2c3f4c",
+        "type": "ui_tab",
+        "name": "Humedad",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e531166fa388e4df",
+        "type": "ui_group",
+        "name": "DH22",
+        "tab": "1d521f9e5ab428e9",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1d521f9e5ab428e9",
+        "type": "ui_tab",
+        "name": "Temperatura",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e9ab664c9952119e",
+        "type": "ui_tab",
+        "name": "Dielectricidad",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e957c6ab0cbd6ce6",
+        "type": "ui_tab",
+        "name": "Radiacion",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e223778965035348",
+        "type": "ui_group",
+        "name": "DH22",
+        "tab": "8c4b9a341a2c3f4c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2f584816d99864e6",
+        "type": "ui_group",
+        "name": "DH11",
+        "tab": "8c4b9a341a2c3f4c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "963c4389ac253554",
@@ -443,7 +640,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"id\":\"pruebas0\"}",
+        "payload": "{\"id\":\"EstacionAIOT-SmartHome\",\"type\":\"EstacionAIOT\"}",
         "payloadType": "json",
         "x": 150,
         "y": 120,
@@ -1546,6 +1743,769 @@
             [
                 "fa6fbdb9b6ac626c"
             ]
+        ]
+    },
+    {
+        "id": "5403699fb0c2aec2",
+        "type": "inject",
+        "z": "32280c71f0756df8",
+        "name": "Create subscription",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{   \"description\": \"Subscription for EstacionAIOT sensor data to Node-RED\",   \"subject\": {     \"entities\": [       {         \"id\": \"EstacionAIOT-SmartHome\",         \"type\": \"EstacionAIOT\"       }     ],     \"condition\": {       \"attrs\": [         \"sDHT11_Temperatura\",         \"sDHT11_Humedad\",         \"sDHT22_Temperatura\",         \"sDHT22_Humedad\",         \"sSuelo_Agua\",         \"sSuelo_Dielectricidad\",         \"sSuelo_Conductividad\",         \"sSuelo_Temperatura\",         \"sRadiacion\"       ]     }   },   \"notification\": {     \"http\": {       \"url\": \"http://node-red:1880/update\"     },     \"attrs\": [       \"sDHT11_Temperatura\",       \"sDHT11_Humedad\",       \"sDHT22_Temperatura\",       \"sDHT22_Humedad\",       \"sSuelo_Agua\",       \"sSuelo_Dielectricidad\",       \"sSuelo_Conductividad\",       \"sSuelo_Temperatura\",       \"sRadiacion\"     ],     \"metadata\": [\"dateCreated\", \"dateModified\"]   },   \"throttling\": 5,   \"expires\": \"2030-01-01T14:00:00.00Z\" }",
+        "payloadType": "json",
+        "x": 190,
+        "y": 60,
+        "wires": [
+            [
+                "949906f07a4a8dfe"
+            ]
+        ]
+    },
+    {
+        "id": "9f0e94312e79a876",
+        "type": "debug",
+        "z": "32280c71f0756df8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "949906f07a4a8dfe",
+        "type": "NGSI subscription",
+        "z": "32280c71f0756df8",
+        "name": "",
+        "openapis": "8a5400cf6326a10c",
+        "servicepath": "/AlmeriaAIoT",
+        "actionType": "create",
+        "entityType": "",
+        "idPattern": "",
+        "watchedAttrs": "",
+        "query": "",
+        "url": "",
+        "attrs": "",
+        "attrsFormat": "",
+        "x": 410,
+        "y": 60,
+        "wires": [
+            [
+                "9f0e94312e79a876"
+            ]
+        ]
+    },
+    {
+        "id": "3a7b41b2cc940132",
+        "type": "NGSI subscription",
+        "z": "32280c71f0756df8",
+        "name": "",
+        "openapis": "8a5400cf6326a10c",
+        "servicepath": "/",
+        "actionType": "update",
+        "entityType": "",
+        "idPattern": "",
+        "watchedAttrs": "",
+        "query": "",
+        "url": "",
+        "attrs": "",
+        "attrsFormat": "",
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "9f0e94312e79a876"
+            ]
+        ]
+    },
+    {
+        "id": "84d61d13ec364321",
+        "type": "inject",
+        "z": "32280c71f0756df8",
+        "name": "Update subscription",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"id\": \"63ea11e4a0cec98fc6017aae\", \"expires\": \"2030-04-05T14:00:00.00Z\" }",
+        "payloadType": "json",
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "3a7b41b2cc940132"
+            ]
+        ]
+    },
+    {
+        "id": "5a5e23fb4b447dbf",
+        "type": "NGSI subscription",
+        "z": "32280c71f0756df8",
+        "name": "",
+        "openapis": "8a5400cf6326a10c",
+        "servicepath": "/",
+        "actionType": "delete",
+        "entityType": "",
+        "idPattern": "",
+        "watchedAttrs": "",
+        "query": "",
+        "url": "",
+        "attrs": "",
+        "attrsFormat": "",
+        "x": 410,
+        "y": 260,
+        "wires": [
+            [
+                "9f0e94312e79a876"
+            ]
+        ]
+    },
+    {
+        "id": "abf633a9c8270ef1",
+        "type": "inject",
+        "z": "32280c71f0756df8",
+        "name": "Create subscription",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"actionType\": \"create\", \"subscription\": {\"type\": \"T\", \"idPattern\": \".*\", \"watchedAttrs\": \"temperature,humidity\", \"q\": \"temperature>10\", \"url\": \"http://context-consumer\", \"attrs\": \"humidity\",   \"description\": \"subscription for node-red\", \"expires\": \"2030-04-05T14:00:00.00Z\", \"throttling\": 5 }}",
+        "payloadType": "json",
+        "x": 190,
+        "y": 360,
+        "wires": [
+            [
+                "eeed7c2999474051"
+            ]
+        ]
+    },
+    {
+        "id": "424febda4ab05a55",
+        "type": "debug",
+        "z": "32280c71f0756df8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "eeed7c2999474051",
+        "type": "NGSI subscription",
+        "z": "32280c71f0756df8",
+        "name": "",
+        "openapis": "8a5400cf6326a10c",
+        "servicepath": "/",
+        "actionType": "payload",
+        "entityType": "",
+        "idPattern": "",
+        "watchedAttrs": "",
+        "query": "",
+        "url": "",
+        "attrs": "",
+        "attrsFormat": "",
+        "x": 410,
+        "y": 360,
+        "wires": [
+            [
+                "424febda4ab05a55"
+            ]
+        ]
+    },
+    {
+        "id": "f79b6853772943f2",
+        "type": "NGSI subscription",
+        "z": "32280c71f0756df8",
+        "name": "",
+        "openapis": "8a5400cf6326a10c",
+        "servicepath": "/",
+        "actionType": "payload",
+        "entityType": "",
+        "idPattern": "",
+        "watchedAttrs": "",
+        "query": "",
+        "url": "",
+        "attrs": "",
+        "attrsFormat": "",
+        "x": 410,
+        "y": 460,
+        "wires": [
+            [
+                "424febda4ab05a55"
+            ]
+        ]
+    },
+    {
+        "id": "c7f285d8e94eaac5",
+        "type": "inject",
+        "z": "32280c71f0756df8",
+        "name": "Update subscription",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"actionType\": \"update\", \"id\": \"63ea11e4a0cec98fc6017aae\", \"subscription\": {\"expires\": \"2030-04-05T14:00:00.00Z\" }}",
+        "payloadType": "json",
+        "x": 190,
+        "y": 460,
+        "wires": [
+            [
+                "f79b6853772943f2"
+            ]
+        ]
+    },
+    {
+        "id": "4f9fad06d8adadea",
+        "type": "inject",
+        "z": "32280c71f0756df8",
+        "name": "Delete subscription",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"actionType\": \"delete\", \"id\": \"63ea11e4a0cec98fc6017aae\"}",
+        "payloadType": "json",
+        "x": 190,
+        "y": 560,
+        "wires": [
+            [
+                "17d5b099b0c94564"
+            ]
+        ]
+    },
+    {
+        "id": "17d5b099b0c94564",
+        "type": "NGSI subscription",
+        "z": "32280c71f0756df8",
+        "name": "",
+        "openapis": "8a5400cf6326a10c",
+        "servicepath": "/",
+        "actionType": "payload",
+        "entityType": "",
+        "idPattern": "",
+        "watchedAttrs": "",
+        "query": "",
+        "url": "",
+        "attrs": "",
+        "attrsFormat": "",
+        "x": 410,
+        "y": 560,
+        "wires": [
+            [
+                "424febda4ab05a55"
+            ]
+        ]
+    },
+    {
+        "id": "ba3298bc4f1d2401",
+        "type": "inject",
+        "z": "32280c71f0756df8",
+        "name": "Delete subscription",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "63ea0733a0cec98fc6017aac",
+        "payloadType": "str",
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "5a5e23fb4b447dbf"
+            ]
+        ]
+    },
+    {
+        "id": "04b3187bf2e2bb4e",
+        "type": "http in",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "url": "/update",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 310,
+        "y": 180,
+        "wires": [
+            [
+                "2b535f96610c8d7b",
+                "61d91010bc7bc73a",
+                "11281811321dc529",
+                "23f926835dc3c3bc"
+            ]
+        ]
+    },
+    {
+        "id": "2b535f96610c8d7b",
+        "type": "debug",
+        "z": "f999ca303cfa8909",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.data.0",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "61d91010bc7bc73a",
+        "type": "http response",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 510,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "11281811321dc529",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "global",
+                "to": "payload.data.0",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3b923af1dc08c8b",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "e531166fa388e4df",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sDHT22_Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1160,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "23f926835dc3c3bc",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.data.0",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 180,
+        "wires": [
+            [
+                "ab40e6bbe76ea8f4",
+                "94dc8030c4d69085",
+                "41cfeeb9b8c3fa29",
+                "04ecaba85d055bf6",
+                "4d34120f0c597797"
+            ]
+        ]
+    },
+    {
+        "id": "527aa6c4555bcf3f",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "89a92138b809a173",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sDHT11_Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1160,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab40e6bbe76ea8f4",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sDHT11_Temperatura.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 140,
+        "wires": [
+            [
+                "527aa6c4555bcf3f",
+                "cf9375cf03e0999d"
+            ]
+        ]
+    },
+    {
+        "id": "94dc8030c4d69085",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sDHT22_Temperatura.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 80,
+        "wires": [
+            [
+                "e3b923af1dc08c8b",
+                "9edcfaf30aa6b1e7"
+            ]
+        ]
+    },
+    {
+        "id": "cf9375cf03e0999d",
+        "type": "debug",
+        "z": "f999ca303cfa8909",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "9edcfaf30aa6b1e7",
+        "type": "debug",
+        "z": "f999ca303cfa8909",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "41cfeeb9b8c3fa29",
+        "type": "debug",
+        "z": "f999ca303cfa8909",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "4d34120f0c597797",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sDHT11_Temperatura.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 360,
+        "wires": [
+            [
+                "63316a27884168c0"
+            ]
+        ]
+    },
+    {
+        "id": "04ecaba85d055bf6",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sDHT22_Temperatura.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 300,
+        "wires": [
+            [
+                "e94ad4a2f1ab5ca4"
+            ]
+        ]
+    },
+    {
+        "id": "63316a27884168c0",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "2f584816d99864e6",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sDHT11_Humedad",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1150,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e94ad4a2f1ab5ca4",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "e223778965035348",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sDHT22_Humedad",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1150,
+        "y": 300,
+        "wires": [
+            []
         ]
     },
     {
@@ -3568,328 +4528,6 @@
         "wires": [
             [
                 "d48f4fef9c02f95f"
-            ]
-        ]
-    },
-    {
-        "id": "5403699fb0c2aec2",
-        "type": "inject",
-        "z": "32280c71f0756df8",
-        "name": "Create subscription",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{   \"type\": \"T\",   \"idPattern\": \".*\",   \"watchedAttrs\": \"temperature,humidity\",   \"q\": \"temperature>10\",   \"url\": \"http://context-consumer\",   \"attrs\": \"humidity\",   \"description\": \"subscription for node-red\",   \"expires\": \"2030-04-05T14:00:00.00Z\",   \"throttling\": 5 }",
-        "payloadType": "json",
-        "x": 190,
-        "y": 60,
-        "wires": [
-            [
-                "949906f07a4a8dfe"
-            ]
-        ]
-    },
-    {
-        "id": "9f0e94312e79a876",
-        "type": "debug",
-        "z": "32280c71f0756df8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 650,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "949906f07a4a8dfe",
-        "type": "NGSI subscription",
-        "z": "32280c71f0756df8",
-        "name": "",
-        "openapis": "8a5400cf6326a10c",
-        "servicepath": "/",
-        "actionType": "create",
-        "entityType": "",
-        "idPattern": "",
-        "watchedAttrs": "",
-        "query": "",
-        "url": "",
-        "attrs": "",
-        "attrsFormat": "",
-        "x": 410,
-        "y": 60,
-        "wires": [
-            [
-                "9f0e94312e79a876"
-            ]
-        ]
-    },
-    {
-        "id": "3a7b41b2cc940132",
-        "type": "NGSI subscription",
-        "z": "32280c71f0756df8",
-        "name": "",
-        "openapis": "8a5400cf6326a10c",
-        "servicepath": "/",
-        "actionType": "update",
-        "entityType": "",
-        "idPattern": "",
-        "watchedAttrs": "",
-        "query": "",
-        "url": "",
-        "attrs": "",
-        "attrsFormat": "",
-        "x": 410,
-        "y": 160,
-        "wires": [
-            [
-                "9f0e94312e79a876"
-            ]
-        ]
-    },
-    {
-        "id": "84d61d13ec364321",
-        "type": "inject",
-        "z": "32280c71f0756df8",
-        "name": "Update subscription",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"id\": \"63ea11e4a0cec98fc6017aae\", \"expires\": \"2030-04-05T14:00:00.00Z\" }",
-        "payloadType": "json",
-        "x": 190,
-        "y": 160,
-        "wires": [
-            [
-                "3a7b41b2cc940132"
-            ]
-        ]
-    },
-    {
-        "id": "ba3298bc4f1d2401",
-        "type": "inject",
-        "z": "32280c71f0756df8",
-        "name": "Delete subscription",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "63ea0733a0cec98fc6017aac",
-        "payloadType": "str",
-        "x": 190,
-        "y": 260,
-        "wires": [
-            [
-                "5a5e23fb4b447dbf"
-            ]
-        ]
-    },
-    {
-        "id": "5a5e23fb4b447dbf",
-        "type": "NGSI subscription",
-        "z": "32280c71f0756df8",
-        "name": "",
-        "openapis": "8a5400cf6326a10c",
-        "servicepath": "/",
-        "actionType": "delete",
-        "entityType": "",
-        "idPattern": "",
-        "watchedAttrs": "",
-        "query": "",
-        "url": "",
-        "attrs": "",
-        "attrsFormat": "",
-        "x": 410,
-        "y": 260,
-        "wires": [
-            [
-                "9f0e94312e79a876"
-            ]
-        ]
-    },
-    {
-        "id": "abf633a9c8270ef1",
-        "type": "inject",
-        "z": "32280c71f0756df8",
-        "name": "Create subscription",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"actionType\": \"create\", \"subscription\": {\"type\": \"T\", \"idPattern\": \".*\", \"watchedAttrs\": \"temperature,humidity\", \"q\": \"temperature>10\", \"url\": \"http://context-consumer\", \"attrs\": \"humidity\",   \"description\": \"subscription for node-red\", \"expires\": \"2030-04-05T14:00:00.00Z\", \"throttling\": 5 }}",
-        "payloadType": "json",
-        "x": 190,
-        "y": 360,
-        "wires": [
-            [
-                "eeed7c2999474051"
-            ]
-        ]
-    },
-    {
-        "id": "424febda4ab05a55",
-        "type": "debug",
-        "z": "32280c71f0756df8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 650,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "eeed7c2999474051",
-        "type": "NGSI subscription",
-        "z": "32280c71f0756df8",
-        "name": "",
-        "openapis": "8a5400cf6326a10c",
-        "servicepath": "/",
-        "actionType": "payload",
-        "entityType": "",
-        "idPattern": "",
-        "watchedAttrs": "",
-        "query": "",
-        "url": "",
-        "attrs": "",
-        "attrsFormat": "",
-        "x": 410,
-        "y": 360,
-        "wires": [
-            [
-                "424febda4ab05a55"
-            ]
-        ]
-    },
-    {
-        "id": "f79b6853772943f2",
-        "type": "NGSI subscription",
-        "z": "32280c71f0756df8",
-        "name": "",
-        "openapis": "8a5400cf6326a10c",
-        "servicepath": "/",
-        "actionType": "payload",
-        "entityType": "",
-        "idPattern": "",
-        "watchedAttrs": "",
-        "query": "",
-        "url": "",
-        "attrs": "",
-        "attrsFormat": "",
-        "x": 410,
-        "y": 460,
-        "wires": [
-            [
-                "424febda4ab05a55"
-            ]
-        ]
-    },
-    {
-        "id": "c7f285d8e94eaac5",
-        "type": "inject",
-        "z": "32280c71f0756df8",
-        "name": "Update subscription",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"actionType\": \"update\", \"id\": \"63ea11e4a0cec98fc6017aae\", \"subscription\": {\"expires\": \"2030-04-05T14:00:00.00Z\" }}",
-        "payloadType": "json",
-        "x": 190,
-        "y": 460,
-        "wires": [
-            [
-                "f79b6853772943f2"
-            ]
-        ]
-    },
-    {
-        "id": "4f9fad06d8adadea",
-        "type": "inject",
-        "z": "32280c71f0756df8",
-        "name": "Delete subscription",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"actionType\": \"delete\", \"id\": \"63ea11e4a0cec98fc6017aae\"}",
-        "payloadType": "json",
-        "x": 190,
-        "y": 560,
-        "wires": [
-            [
-                "17d5b099b0c94564"
-            ]
-        ]
-    },
-    {
-        "id": "17d5b099b0c94564",
-        "type": "NGSI subscription",
-        "z": "32280c71f0756df8",
-        "name": "",
-        "openapis": "8a5400cf6326a10c",
-        "servicepath": "/",
-        "actionType": "payload",
-        "entityType": "",
-        "idPattern": "",
-        "watchedAttrs": "",
-        "query": "",
-        "url": "",
-        "attrs": "",
-        "attrsFormat": "",
-        "x": 410,
-        "y": 560,
-        "wires": [
-            [
-                "424febda4ab05a55"
             ]
         ]
     },

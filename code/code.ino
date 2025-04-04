@@ -9,6 +9,7 @@
 // Configuration
 const char *ssid = SSID_WIFI;
 const char *password = PASSWORD_WIFI;
+
 const char *orionEndpoint = "http://192.168.219.224:1026/v2/entities";
 // const char *fiwareService = ""; // Only alphanumeric and underscore
 const char *fiwareServicePath = "/AlmeriaAIoT"; // Path can have slashes
