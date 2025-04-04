@@ -30,7 +30,7 @@ const String entityId = "EstacionAIOT-SmartHome";
 const String entityType = "EstacionAIOT";
 
 //Radiation sensor
-const int sensorPin6 = 12;
+const int sensorPin6 = 32;
 int sensorValue1;  // variable que almacena el valor raw (0 a 1023)
 float value1;      // variable que almacena el voltaje (0.0 a 5.0)
 
@@ -235,8 +235,8 @@ void loop() {
   serializeJson(doc, jsonOutput);
   
   // Send the JSON to FIWARE Orion
-  //sendToFiware(jsonOutput);
-  Serial.println(jsonOutput);
+  sendToFiware(jsonOutput);
+  //Serial.println(jsonOutput);
 
   
   delay(4000); // Send data every 10 seconds
