@@ -38,7 +38,7 @@ services:
     healthcheck:
       test: curl --fail -s http://cygnus:5080/v1/version || exit 1
     restart: always
-
+  
   comet:
     image: telefonicaiot/fiware-sth-comet:2.10.0
     init: true
