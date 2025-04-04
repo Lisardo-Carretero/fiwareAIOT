@@ -34,6 +34,10 @@ const int sensorPin6 = 12;
 int sensorValue1;  // variable que almacena el valor raw (0 a 1023)
 float value1;      // variable que almacena el voltaje (0.0 a 5.0)
 
+// Add these global variables at the top of your code
+TaskHandle_t RadiationTask;
+float radiationValue = 0;
+SemaphoreHandle_t radiationMutex;
 
 // Simulated sensor readings (replace with actual sensor code)
 float getTemperature(DHT_Unified dht_sensor) {
@@ -47,7 +51,6 @@ float getHumidity(DHT_Unified dht_sensor) {
   dht_sensor.humidity().getEvent(&event);
   return event.relative_humidity;
 }
-
 
 float getSoilMoisture() {
   return random(50, 250) / 10.0;
@@ -65,15 +68,40 @@ float getSoilTemperature() {
   return random(180, 260) / 10.0;
 }
 
+// Your existing getRadiation function can remain for compatibility
 float getRadiation() {
-  sensorValue1 = analogRead(sensorPin6);           // realizar la lectura
-  Serial.println(sensorValue1);
-  value1 = fmap(sensorValue1, 0, 1023, 0.0, 5.0);  // cambiar escala a 0.0 - 5.0
-  Serial.println(value1);
-  float tension_PPFD = value1 * 100;
-  float PPFD = 5 * tension_PPFD;
-  Serial.println(PPFD);
-  return PPFD;
+  // Just return the value that's being updated by the other core
+  if (radiationMutex != NULL) {
+    xSemaphoreTake(radiationMutex, portMAX_DELAY);
+    float result = radiationValue;
+    xSemaphoreGive(radiationMutex);
+    return result;
+  }
+  return 0;
+}
+
+// This function will run on Core 1
+void radiationTaskFunction(void * parameter) {
+  for(;;) {
+    int sensorValue = analogRead(sensorPin6);
+    float value = fmap(sensorValue, 0, 1023, 0.0, 5.0);
+    float tension_PPFD = value * 100;
+    float PPFD = 5 * tension_PPFD;
+    
+    // Update the shared variable with mutex protection
+    if (radiationMutex != NULL) {
+      xSemaphoreTake(radiationMutex, portMAX_DELAY);
+      radiationValue = PPFD;
+      xSemaphoreGive(radiationMutex);
+    }
+    
+    // Print debug info
+    Serial.print("Core 1: Radiation PPFD = ");
+    Serial.println(PPFD);
+    
+    // Sleep for a bit to avoid flooding serial
+    vTaskDelay(1000 / portTICK_PERIOD_MS);
+  }
 }
 
 // scale change neded to calculate radiation
@@ -197,9 +225,22 @@ void setup() {
   }
   Serial.println("\nConectado a Wi-Fi");
 
-  // Initialize dht sensors.
+  // Initialize dht sensors
   dht1.begin();
   dht2.begin();
+  
+  // Create mutex for safe access to shared data
+  radiationMutex = xSemaphoreCreateMutex();
+  
+  // Create task for radiation sensor on Core 1
+  xTaskCreatePinnedToCore(
+    radiationTaskFunction,  // Task function
+    "RadiationTask",        // Name of task
+    10000,                  // Stack size of task
+    NULL,                   // Parameter of the task
+    1,                      // Priority of the task
+    &RadiationTask,         // Task handle to keep track of created task
+    1);                     // Pin task to core 1
 }
 
 void loop() {
@@ -217,7 +258,7 @@ void loop() {
   float soilDielectric = getSoilDielectric();
   float soilConductivity = getSoilConductivity();
   float soilTemp = getSoilTemperature();
-  float radiation = getRadiation();
+  // float radiation = getRadiation();
   
   // Add each sensor reading to the document (only if valid)
   addSensorReading(doc, "sDHT11_Temperatura", dht11Temp);
@@ -228,7 +269,7 @@ void loop() {
   addSensorReading(doc, "sSuelo_Dielectricidad", soilDielectric);
   addSensorReading(doc, "sSuelo_Conductividad", soilConductivity);
   addSensorReading(doc, "sSuelo_Temperatura", soilTemp);
-  addSensorReading(doc, "sRadiacion", radiation);
+  addSensorReading(doc, "sRadiacion", radiationValue);
   
   // Serialize the JSON to a string
   String jsonOutput;
