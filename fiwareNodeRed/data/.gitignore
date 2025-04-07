@@ -1,0 +1,7 @@
+**.npm
+**lib
+**node_modules
+*.config*
+*package.json
+*.flows*
+settings.js
