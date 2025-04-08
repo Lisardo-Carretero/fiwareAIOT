@@ -2,7 +2,7 @@
     {
         "id": "32280c71f0756df8",
         "type": "tab",
-        "label": "NGSI subscription",
+        "label": "SuscripcionFiware",
         "disabled": false,
         "info": "",
         "env": []
@@ -10,7 +10,7 @@
     {
         "id": "f999ca303cfa8909",
         "type": "tab",
-        "label": "SuscripcionFiware",
+        "label": "ActualizacionDatos",
         "disabled": false,
         "info": "",
         "env": []
@@ -50,6 +50,7 @@
         "type": "ui_tab",
         "name": "Agua",
         "icon": "dashboard",
+        "order": 1,
         "disabled": false,
         "hidden": false
     },
@@ -166,6 +167,7 @@
         "type": "ui_tab",
         "name": "Conductividad",
         "icon": "dashboard",
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
@@ -174,6 +176,7 @@
         "type": "ui_tab",
         "name": "Humedad",
         "icon": "dashboard",
+        "order": 3,
         "disabled": false,
         "hidden": false
     },
@@ -193,6 +196,7 @@
         "type": "ui_tab",
         "name": "Temperatura",
         "icon": "dashboard",
+        "order": 4,
         "disabled": false,
         "hidden": false
     },
@@ -201,6 +205,7 @@
         "type": "ui_tab",
         "name": "Dielectricidad",
         "icon": "dashboard",
+        "order": 5,
         "disabled": false,
         "hidden": false
     },
@@ -209,6 +214,7 @@
         "type": "ui_tab",
         "name": "Radiacion",
         "icon": "dashboard",
+        "order": 6,
         "disabled": false,
         "hidden": false
     },
@@ -294,6 +300,7 @@
         "type": "ui_tab",
         "name": "S. DHT22 (Temp y Hum)",
         "icon": "dashboard",
+        "order": 9,
         "disabled": false,
         "hidden": false
     },
@@ -313,6 +320,7 @@
         "type": "ui_tab",
         "name": "S. DHT11 (Temp y Hum)",
         "icon": "dashboard",
+        "order": 10,
         "disabled": false,
         "hidden": false
     },
@@ -332,6 +340,7 @@
         "type": "ui_tab",
         "name": "S. Radiacion",
         "icon": "dashboard",
+        "order": 11,
         "disabled": false,
         "hidden": false
     },
@@ -349,8 +358,9 @@
     {
         "id": "1327802e82fbb064",
         "type": "ui_tab",
-        "name": "S. Suelo (Temp, Agua, Conduct, Dielec)",
+        "name": "S. Suelo (Temp, Agua, Conduct, Dielec, SolutionEC, PoreWater)",
         "icon": "dashboard",
+        "order": 12,
         "disabled": false,
         "hidden": false
     },
@@ -359,6 +369,107 @@
         "type": "ui_group",
         "name": "Suelo",
         "tab": "1327802e82fbb064",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "91b44759be351f01",
+        "type": "ui_tab",
+        "name": "S. Aire (CO2, Temp y Hum)",
+        "icon": "dashboard",
+        "order": 13,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "13d4411a8ccf1ae2",
+        "type": "ui_group",
+        "name": "Aire",
+        "tab": "91b44759be351f01",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "165e95adf59d1cf4",
+        "type": "ui_group",
+        "name": "Aire",
+        "tab": "1d521f9e5ab428e9",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "398447300aacc5d3",
+        "type": "ui_group",
+        "name": "Aire",
+        "tab": "8c4b9a341a2c3f4c",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a17a65308f6e0788",
+        "type": "ui_group",
+        "name": "Aire",
+        "tab": "b9f7ae2ff918a457",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b9f7ae2ff918a457",
+        "type": "ui_tab",
+        "name": "CO2",
+        "icon": "dashboard",
+        "order": 7,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "016e045151fe00c2",
+        "type": "ui_tab",
+        "name": "SolutionEC",
+        "icon": "dashboard",
+        "order": 8,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "389a3d77306bc80c",
+        "type": "ui_group",
+        "name": "Suelo",
+        "tab": "016e045151fe00c2",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b5bcd47aa63c59e3",
+        "type": "ui_tab",
+        "name": "Porewater",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "98b31619ea924cbb",
+        "type": "ui_group",
+        "name": "Aire",
+        "tab": "b5bcd47aa63c59e3",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -380,7 +491,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{   \"description\": \"Subscription for EstacionAIOT sensor data to Node-RED\",   \"subject\": {     \"entities\": [       {         \"id\": \"EstacionAIOT-SmartHome\",         \"type\": \"EstacionAIOT\"       }     ],     \"condition\": {       \"attrs\": [         \"sDHT11_Temperatura\",         \"sDHT11_Humedad\",         \"sDHT22_Temperatura\",         \"sDHT22_Humedad\",         \"sSuelo_Agua\",         \"sSuelo_Dielectricidad\",         \"sSuelo_Conductividad\",         \"sSuelo_Temperatura\",         \"sRadiacion\"       ]     }   },   \"notification\": {     \"http\": {       \"url\": \"http://node-red:1880/update\"     },     \"attrs\": [       \"sDHT11_Temperatura\",       \"sDHT11_Humedad\",       \"sDHT22_Temperatura\",       \"sDHT22_Humedad\",       \"sSuelo_Agua\",       \"sSuelo_Dielectricidad\",       \"sSuelo_Conductividad\",       \"sSuelo_Temperatura\",       \"sRadiacion\"     ],     \"metadata\": [\"dateCreated\", \"dateModified\"]   },   \"throttling\": 5,   \"expires\": \"2030-01-01T14:00:00.00Z\" }",
+        "payload": "{   \"description\": \"Subscription for EstacionAIOT sensor data to Node-RED\",   \"subject\": {     \"entities\": [       {         \"id\": \"EstacionAIOT-SmartHome\",         \"type\": \"EstacionAIOT\"       }     ],     \"condition\": {       \"attrs\": [         \"sDHT11_Temperatura\",         \"sDHT11_Humedad\",         \"sDHT22_Temperatura\",         \"sDHT22_Humedad\",         \"sSuelo_Agua\",         \"sSuelo_Dielectricidad\",         \"sSuelo_Conductividad\",         \"sSuelo_Temperatura\", \t\t\"sSuelo_SolutionEC\", \t\t\"sSuelo_Porewater\",         \"sRadiacion\",         \"sAire_CO2\",         \"sAire_Temperatura\",         \"sAire_Humedad\"       ]     }   },   \"notification\": {     \"http\": {       \"url\": \"http://node-red:1880/update\"     },     \"attrs\": [       \"sDHT11_Temperatura\",       \"sDHT11_Humedad\",       \"sDHT22_Temperatura\",       \"sDHT22_Humedad\",       \"sSuelo_Agua\",       \"sSuelo_Dielectricidad\",       \"sSuelo_Conductividad\",       \"sSuelo_Temperatura\",       \"sSuelo_SolutionEC\", \t  \"sSuelo_Porewater\", \t  \"sRadiacion\",       \"sAire_CO2\",       \"sAire_Temperatura\",       \"sAire_Humedad\" \t       ],     \"metadata\": [       \"dateCreated\",       \"dateModified\"     ]   },   \"throttling\": 5,   \"expires\": \"2030-01-01T14:00:00.00Z\" }",
         "payloadType": "json",
         "x": 190,
         "y": 60,
@@ -468,7 +579,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"id\": \"63ea11e4a0cec98fc6017aae\", \"expires\": \"2030-04-05T14:00:00.00Z\" }",
+        "payload": "{   \"description\": \"Subscription for EstacionAIOT sensor data to Node-RED\",   \"subject\": {     \"entities\": [       {         \"id\": \"EstacionAIOT-SmartHome\",         \"type\": \"EstacionAIOT\"       }     ],     \"condition\": {       \"attrs\": [         \"sDHT11_Temperatura\",         \"sDHT11_Humedad\",         \"sDHT22_Temperatura\",         \"sDHT22_Humedad\",         \"sSuelo_Agua\",         \"sSuelo_Dielectricidad\",         \"sSuelo_Conductividad\",         \"sSuelo_Temperatura\", \t\t\"sSuelo_SolutionEC\", \t\t\"sSuelo_Porewater\",         \"sRadiacion\",         \"sAire_CO2\",         \"sAire_Temperatura\",         \"sAire_Humedad\"       ]     }   },   \"notification\": {     \"http\": {       \"url\": \"http://node-red:1880/update\"     },     \"attrs\": [       \"sDHT11_Temperatura\",       \"sDHT11_Humedad\",       \"sDHT22_Temperatura\",       \"sDHT22_Humedad\",       \"sSuelo_Agua\",       \"sSuelo_Dielectricidad\",       \"sSuelo_Conductividad\",       \"sSuelo_Temperatura\",       \"sSuelo_SolutionEC\", \t  \"sSuelo_Porewater\", \t  \"sRadiacion\",       \"sAire_CO2\",       \"sAire_Temperatura\",       \"sAire_Humedad\" \t       ],     \"metadata\": [       \"dateCreated\",       \"dateModified\"     ]   },   \"throttling\": 5,   \"expires\": \"2030-01-01T14:00:00.00Z\" }",
         "payloadType": "json",
         "x": 190,
         "y": 160,
@@ -516,7 +627,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "63ea0733a0cec98fc6017aac",
+        "payload": "{   \"description\": \"Subscription for EstacionAIOT sensor data to Node-RED\",   \"subject\": {     \"entities\": [       {         \"id\": \"EstacionAIOT-SmartHome\",         \"type\": \"EstacionAIOT\"       }     ],     \"condition\": {       \"attrs\": [         \"sDHT11_Temperatura\",         \"sDHT11_Humedad\",         \"sDHT22_Temperatura\",         \"sDHT22_Humedad\",         \"sSuelo_Agua\",         \"sSuelo_Dielectricidad\",         \"sSuelo_Conductividad\",         \"sSuelo_Temperatura\", \t\t\"sSuelo_SolutionEC\", \t\t\"sSuelo_Porewater\",         \"sRadiacion\",         \"sAire_CO2\",         \"sAire_Temperatura\",         \"sAire_Humedad\"       ]     }   },   \"notification\": {     \"http\": {       \"url\": \"http://node-red:1880/update\"     },     \"attrs\": [       \"sDHT11_Temperatura\",       \"sDHT11_Humedad\",       \"sDHT22_Temperatura\",       \"sDHT22_Humedad\",       \"sSuelo_Agua\",       \"sSuelo_Dielectricidad\",       \"sSuelo_Conductividad\",       \"sSuelo_Temperatura\",       \"sSuelo_SolutionEC\", \t  \"sSuelo_Porewater\", \t  \"sRadiacion\",       \"sAire_CO2\",       \"sAire_Temperatura\",       \"sAire_Humedad\" \t       ],     \"metadata\": [       \"dateCreated\",       \"dateModified\"     ]   },   \"throttling\": 5,   \"expires\": \"2030-01-01T14:00:00.00Z\" }",
         "payloadType": "str",
         "x": 190,
         "y": 260,
@@ -637,7 +748,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1360,
+        "x": 1580,
         "y": 120,
         "wires": [
             []
@@ -666,15 +777,20 @@
         "y": 180,
         "wires": [
             [
-                "ab40e6bbe76ea8f4",
-                "94dc8030c4d69085",
-                "04ecaba85d055bf6",
-                "4d34120f0c597797",
-                "921735cc9fba8860",
-                "b866ef644273e402",
-                "4ebbd1f66a440a14",
-                "c70960e8ba64b80a",
-                "4bf0b779c35f4963"
+                "640bbe65bc741a8e",
+                "b28bb291022d91f6",
+                "bb1ff37be634829b",
+                "6210bd9e2a42e970",
+                "968933d155fc7ec7",
+                "2be281e57fd220ee",
+                "d1580472f28ac761",
+                "802756349b4c4b44",
+                "ef94a50e6c01846b",
+                "95e736077a68bea7",
+                "8dab5c2b0360a636",
+                "0f4ee1842072b3b4",
+                "78f91dd63ba8798e",
+                "230bcf3953cc6f5b"
             ]
         ]
     },
@@ -716,7 +832,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1360,
+        "x": 1580,
         "y": 220,
         "wires": [
             []
@@ -741,7 +857,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 1060,
         "y": 220,
         "wires": [
             [
@@ -771,7 +887,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 1060,
         "y": 120,
         "wires": [
             [
@@ -801,7 +917,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 1060,
         "y": 420,
         "wires": [
             [
@@ -831,7 +947,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 1060,
         "y": 320,
         "wires": [
             [
@@ -880,7 +996,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1350,
+        "x": 1570,
         "y": 420,
         "wires": [
             []
@@ -924,7 +1040,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1350,
+        "x": 1570,
         "y": 320,
         "wires": [
             []
@@ -949,7 +1065,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 1060,
         "y": 520,
         "wires": [
             [
@@ -998,7 +1114,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1330,
+        "x": 1550,
         "y": 520,
         "wires": [
             []
@@ -1023,7 +1139,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 1060,
         "y": 620,
         "wires": [
             [
@@ -1072,7 +1188,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1360,
+        "x": 1580,
         "y": 720,
         "wires": [
             []
@@ -1097,7 +1213,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 1060,
         "y": 720,
         "wires": [
             [
@@ -1146,7 +1262,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1330,
+        "x": 1550,
         "y": 620,
         "wires": [
             []
@@ -1190,7 +1306,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1360,
+        "x": 1580,
         "y": 820,
         "wires": [
             []
@@ -1215,7 +1331,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 1060,
         "y": 820,
         "wires": [
             [
@@ -1245,7 +1361,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 1060,
         "y": 920,
         "wires": [
             [
@@ -1294,7 +1410,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1360,
+        "x": 1580,
         "y": 920,
         "wires": [
             []
@@ -1338,7 +1454,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1140,
+        "x": 1360,
         "y": 100,
         "wires": [
             []
@@ -1382,7 +1498,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1140,
+        "x": 1360,
         "y": 200,
         "wires": [
             []
@@ -1426,7 +1542,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1130,
+        "x": 1350,
         "y": 400,
         "wires": [
             []
@@ -1470,7 +1586,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1130,
+        "x": 1350,
         "y": 300,
         "wires": [
             []
@@ -1514,7 +1630,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1110,
+        "x": 1330,
         "y": 500,
         "wires": [
             []
@@ -1558,7 +1674,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1140,
+        "x": 1360,
         "y": 700,
         "wires": [
             []
@@ -1602,7 +1718,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1110,
+        "x": 1330,
         "y": 600,
         "wires": [
             []
@@ -1646,7 +1762,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1140,
+        "x": 1360,
         "y": 800,
         "wires": [
             []
@@ -1690,7 +1806,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1140,
+        "x": 1360,
         "y": 900,
         "wires": [
             []
@@ -1720,7 +1836,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1140,
+        "x": 1360,
         "y": 60,
         "wires": []
     },
@@ -1748,7 +1864,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1350,
+        "x": 1570,
         "y": 280,
         "wires": []
     },
@@ -1776,7 +1892,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1110,
+        "x": 1330,
         "y": 460,
         "wires": []
     },
@@ -1804,7 +1920,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1330,
+        "x": 1550,
         "y": 480,
         "wires": []
     },
@@ -1832,7 +1948,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1110,
+        "x": 1330,
         "y": 560,
         "wires": []
     },
@@ -1860,7 +1976,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1330,
+        "x": 1550,
         "y": 580,
         "wires": []
     },
@@ -1878,7 +1994,7 @@
         "label": "μS/cm",
         "format": "{{value}}",
         "min": 0,
-        "max": 10,
+        "max": "100",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -1888,7 +2004,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1140,
+        "x": 1360,
         "y": 660,
         "wires": []
     },
@@ -1906,7 +2022,7 @@
         "label": "μS/cm",
         "format": "{{value}}",
         "min": 0,
-        "max": 10,
+        "max": "100",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -1916,7 +2032,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1360,
+        "x": 1580,
         "y": 680,
         "wires": []
     },
@@ -1934,7 +2050,7 @@
         "label": "units",
         "format": "{{value}}",
         "min": 0,
-        "max": 10,
+        "max": "3000",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -1944,7 +2060,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1140,
+        "x": 1360,
         "y": 760,
         "wires": []
     },
@@ -1962,7 +2078,7 @@
         "label": "units",
         "format": "{{value}}",
         "min": 0,
-        "max": 10,
+        "max": "3000",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -1972,7 +2088,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1360,
+        "x": 1580,
         "y": 780,
         "wires": []
     },
@@ -2000,7 +2116,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1360,
+        "x": 1580,
         "y": 80,
         "wires": []
     },
@@ -2028,7 +2144,7 @@
         "seg2": "0",
         "diff": false,
         "className": "",
-        "x": 1140,
+        "x": 1360,
         "y": 160,
         "wires": []
     },
@@ -2056,7 +2172,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1360,
+        "x": 1580,
         "y": 180,
         "wires": []
     },
@@ -2084,7 +2200,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1360,
+        "x": 1580,
         "y": 880,
         "wires": []
     },
@@ -2112,7 +2228,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1140,
+        "x": 1360,
         "y": 860,
         "wires": []
     },
@@ -2140,7 +2256,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1130,
+        "x": 1350,
         "y": 260,
         "wires": []
     },
@@ -2168,7 +2284,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1130,
+        "x": 1350,
         "y": 360,
         "wires": []
     },
@@ -2196,8 +2312,1228 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1350,
+        "x": 1570,
         "y": 380,
         "wires": []
+    },
+    {
+        "id": "e2e8d51b2e4542d5",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sAire_Temperatura.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 1240,
+        "wires": [
+            [
+                "e505e16d5a8b3e4a",
+                "c8c1e5cf66629074",
+                "b017a550ba6bdc7d",
+                "fdeac47b1126c1c7"
+            ]
+        ]
+    },
+    {
+        "id": "e505e16d5a8b3e4a",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "165e95adf59d1cf4",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sAire_Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1570,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8c1e5cf66629074",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "13d4411a8ccf1ae2",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sAire_Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1350,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b017a550ba6bdc7d",
+        "type": "ui_gauge",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "165e95adf59d1cf4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sAire_Temperatura",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1570,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "fdeac47b1126c1c7",
+        "type": "ui_gauge",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "13d4411a8ccf1ae2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sAire_Temperatura",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1350,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "38777da7b8ffd25b",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sAire_CO2.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 1340,
+        "wires": [
+            [
+                "f27f2c5d6b6211fd",
+                "e2b728efa4f8202c",
+                "ea04cec49e895969",
+                "90f1e0c6a68f39e4"
+            ]
+        ]
+    },
+    {
+        "id": "90f1e0c6a68f39e4",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "a17a65308f6e0788",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sAire_CO2",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1550,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2b728efa4f8202c",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "13d4411a8ccf1ae2",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sAire_CO2",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1330,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ea04cec49e895969",
+        "type": "ui_gauge",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "a17a65308f6e0788",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sAire_CO2",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1550,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "f27f2c5d6b6211fd",
+        "type": "ui_gauge",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "13d4411a8ccf1ae2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sAire_CO2",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1330,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "c9e1c5cb2307a1d6",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sAire_Humedad.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 1440,
+        "wires": [
+            [
+                "3b880c9e8f6aa2fd",
+                "c216311912a86464",
+                "c273907104538b15",
+                "5413ae7bf61fe89c"
+            ]
+        ]
+    },
+    {
+        "id": "5413ae7bf61fe89c",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "398447300aacc5d3",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sAire_Humedad",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1560,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c216311912a86464",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "13d4411a8ccf1ae2",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sAire_Humedad",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1340,
+        "y": 1420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c273907104538b15",
+        "type": "ui_gauge",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "398447300aacc5d3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sAire_Humedad",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1560,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "3b880c9e8f6aa2fd",
+        "type": "ui_gauge",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "13d4411a8ccf1ae2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sAire_Humedad",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1340,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "4ffa82b3018410cc",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sSuelo_SolutionEC.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 1020,
+        "wires": [
+            [
+                "012205d54c1c5a88",
+                "1594fcde63579739",
+                "252006de5d852d5c",
+                "203e18247950bf8a"
+            ]
+        ]
+    },
+    {
+        "id": "012205d54c1c5a88",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "389a3d77306bc80c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sSuelo_SolutionEC",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1570,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1594fcde63579739",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "292931acccd109d9",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sSuelo_SolutionEC",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1350,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "252006de5d852d5c",
+        "type": "ui_gauge",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "389a3d77306bc80c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sSuelo_SolutionEC",
+        "label": "dS/m",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1570,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "203e18247950bf8a",
+        "type": "ui_gauge",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "292931acccd109d9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sSuelo_SolutionEC",
+        "label": "dS/m",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1350,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "640bbe65bc741a8e",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sDHT22_Temperatura",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 120,
+        "wires": [
+            [
+                "94dc8030c4d69085"
+            ]
+        ]
+    },
+    {
+        "id": "b28bb291022d91f6",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sDHT11_Temperatura",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 220,
+        "wires": [
+            [
+                "ab40e6bbe76ea8f4"
+            ]
+        ]
+    },
+    {
+        "id": "bb1ff37be634829b",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sDHT22_Humedad",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 320,
+        "wires": [
+            [
+                "04ecaba85d055bf6"
+            ]
+        ]
+    },
+    {
+        "id": "6210bd9e2a42e970",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sDHT11_Humedad",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 420,
+        "wires": [
+            [
+                "4d34120f0c597797"
+            ]
+        ]
+    },
+    {
+        "id": "968933d155fc7ec7",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sRadiacion",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 520,
+        "wires": [
+            [
+                "921735cc9fba8860"
+            ]
+        ]
+    },
+    {
+        "id": "2be281e57fd220ee",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sSuelo_Agua",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 620,
+        "wires": [
+            [
+                "b866ef644273e402"
+            ]
+        ]
+    },
+    {
+        "id": "d1580472f28ac761",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sSuelo_Conductividad",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 720,
+        "wires": [
+            [
+                "4ebbd1f66a440a14"
+            ]
+        ]
+    },
+    {
+        "id": "802756349b4c4b44",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sSuelo_Dielectricidad",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 820,
+        "wires": [
+            [
+                "c70960e8ba64b80a"
+            ]
+        ]
+    },
+    {
+        "id": "ef94a50e6c01846b",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sSuelo_Temperatura",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 920,
+        "wires": [
+            [
+                "4bf0b779c35f4963"
+            ]
+        ]
+    },
+    {
+        "id": "95e736077a68bea7",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sSuelo_SolutionEC",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 1020,
+        "wires": [
+            [
+                "4ffa82b3018410cc"
+            ]
+        ]
+    },
+    {
+        "id": "8dab5c2b0360a636",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sAire_Temperatura",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 1240,
+        "wires": [
+            [
+                "e2e8d51b2e4542d5"
+            ]
+        ]
+    },
+    {
+        "id": "0f4ee1842072b3b4",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sAire_CO2",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 1340,
+        "wires": [
+            [
+                "38777da7b8ffd25b"
+            ]
+        ]
+    },
+    {
+        "id": "78f91dd63ba8798e",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sAire_Humedad",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 1440,
+        "wires": [
+            [
+                "c9e1c5cb2307a1d6"
+            ]
+        ]
+    },
+    {
+        "id": "eb0e62946943db6b",
+        "type": "change",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sSuelo_Porewater.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 1120,
+        "wires": [
+            [
+                "cd62583472841829",
+                "287bc157b188bb4a",
+                "19834d04e87a2dd8",
+                "cc79629f1ce3ef02"
+            ]
+        ]
+    },
+    {
+        "id": "cd62583472841829",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "98b31619ea924cbb",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sSuelo_Porewater",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1570,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "287bc157b188bb4a",
+        "type": "ui_chart",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "292931acccd109d9",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sSuelo_Porewater",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1350,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19834d04e87a2dd8",
+        "type": "ui_gauge",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "98b31619ea924cbb",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sSuelo_Porewater",
+        "label": "dS/m",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1570,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "cc79629f1ce3ef02",
+        "type": "ui_gauge",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "group": "292931acccd109d9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sSuelo_Porewater",
+        "label": "dS/m",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1350,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "230bcf3953cc6f5b",
+        "type": "switch",
+        "z": "f999ca303cfa8909",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sSuelo_Porewater",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 1120,
+        "wires": [
+            [
+                "eb0e62946943db6b"
+            ]
+        ]
     }
 ]
