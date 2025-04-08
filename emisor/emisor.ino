@@ -22,7 +22,6 @@ void loop()
     serializeJson(doc, jsonData);
 
     // Enviar los datos al Arduino Mega
-    Serial.println(jsonData);
     Serial.println("Datos enviados: " + jsonData);
 
     delay(2000); // Enviar cada 2 segundos

@@ -18,13 +18,6 @@ void loop()
         StaticJsonDocument<128> doc;
         DeserializationError error = deserializeJson(doc, jsonData);
 
-        if (error)
-        {
-            Serial.print("Error al parsear JSON: ");
-            Serial.println(error.c_str());
-            return;
-        }
-
         // Extraer los valores del JSON
         float temperature = doc["temperature"];
         float humidity = doc["humidity"];
