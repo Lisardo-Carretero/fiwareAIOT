@@ -211,13 +211,13 @@ void loop() {
   float dht11Temp = getTemperature(dht1);
   float dht22Temp = getTemperature(dht2);
   float dht22Hum = getHumidity(dht2);
-  float soilDielectric = -1.0;
-  float soilMoisture = -1.0;
-  float soilConductivity = -1.0;
-  float sSueloTemperatura = -1.0;
-  float sSueloSolution = -1.0;
-  float sSueloPoorwater = -1.0;
-  
+  float soilDielectric = 0;
+  float soilMoisture = 0;
+  float soilConductivity = 0;
+  float sSueloTemperatura = 0;
+  float sSueloSolution = 0;
+  float sSueloPorewater = 0;
+
   if (Serial.available()) {
     String jsonData = Serial.readStringUntil('\n');  // Leer datos del Arduino Mega
     StaticJsonDocument<256> doc1;                    // Aumentar el tamaño si el JSON es más grande
@@ -228,7 +228,7 @@ void loop() {
     soilConductivity = doc1["Conductividad"];
     sSueloTemperatura = doc1["Temperature"];
     sSueloSolution = doc1["SolutionEC"];
-    sSueloPoorwater = doc1["PorewaterEC"];
+    sSueloPorewater = doc1["PorewaterEC"];
   }
   float radiation = getRadiation();
   delay(5000);
@@ -242,15 +242,12 @@ void loop() {
   addSensorReading(doc, "sDHT22_Temperatura", dht22Temp);
   addSensorReading(doc, "sDHT22_Humedad", dht22Hum);
 
-  if (soilDielectric != -1.0) {
-
-    addSensorReading(doc, "sSuelo_Agua", soilMoisture);
-    addSensorReading(doc, "sSuelo_Dielectricidad", soilDielectric);
-    addSensorReading(doc, "sSuelo_Conductividad", soilConductivity);
-    addSensorReading(doc, "sSuelo_Temperatura", sSueloTemperatura);
-    addSensorReading(doc, "sSuelo_SolutionEC", sSueloSolution);
-    addSensorReading(doc, "sSuelo_Poorwater", sSueloPoorwater);
-  }
+  addSensorReading(doc, "sSuelo_Agua", soilMoisture);
+  addSensorReading(doc, "sSuelo_Dielectricidad", soilDielectric);
+  addSensorReading(doc, "sSuelo_Conductividad", soilConductivity);
+  addSensorReading(doc, "sSuelo_Temperatura", sSueloTemperatura);
+  addSensorReading(doc, "sSuelo_SolutionEC", sSueloSolution);
+  addSensorReading(doc, "sSuelo_Porewater", sSueloPorewater);
 
   addSensorReading(doc, "sRadiacion", radiation);
   addSensorReading(doc, "sAire_CO2", CO2);
