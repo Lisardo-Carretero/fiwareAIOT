@@ -10,8 +10,8 @@ void loop() {
     String jsonData = Serial.readStringUntil('\n');  // Leer datos del Arduino Mega
 
     // Parsear el JSON recibido
-    StaticJsonDocument<256> doc;  // Aumentar el tamaño si el JSON es más grande
-    deserializeJson(doc, jsonData);
+      StaticJsonDocument<256> doc;  // Aumentar el tamaño si el JSON es más grande
+      deserializeJson(doc, jsonData);
 
     // Acceder a cada valor del JSON y mostrarlo en el monitor serie
     float dielMean = doc["Dielectrico"];
