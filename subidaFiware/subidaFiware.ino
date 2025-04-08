@@ -23,7 +23,6 @@ DHT_Unified dht2(DHTPIN2, DHTTYPE2);
 const char *ssid = SSID_WIFI;
 const char *password = PASSWORD_WIFI;
 const char *orionEndpoint = "http://192.168.158.224:1026/v2/entities";
-// const char *fiwareService = ""; // Only alphanumeric and underscore
 const char *fiwareServicePath = "/AlmeriaAIoT";  // Path can have slashes
 
 // Entity configuration
@@ -38,7 +37,24 @@ float value1;      // variable que almacena el voltaje (0.0 a 5.0)
 // Air sensor
 SCD30 airSensor;
 
-// Sensor readings
+// Task handles for dual-core operation
+TaskHandle_t soilTaskHandle;
+
+// Mutex for protecting shared data
+portMUX_TYPE soilDataMutex = portMUX_INITIALIZER_UNLOCKED;
+
+// Shared soil data structure
+struct SoilData {
+  float dielectric;
+  float moisture;
+  float conductivity;
+  float temperature;
+  float solutionEC;
+  float porewaterEC;
+  bool dataReady;
+} soilData;
+
+// Sensor readings functions
 float getTemperature(DHT_Unified dht_sensor) {
   sensors_event_t event;
   dht_sensor.temperature().getEvent(&event);
@@ -52,14 +68,13 @@ float getHumidity(DHT_Unified dht_sensor) {
 }
 
 float getRadiation() {
-  sensorValue1 = analogRead(sensorPin6);           // realizar la lectura
-  value1 = fmap(sensorValue1, 0, 1023, 0.0, 5.0);  // cambiar escala a 0.0 - 5.0
+  sensorValue1 = analogRead(sensorPin6);
+  value1 = fmap(sensorValue1, 0, 1023, 0.0, 5.0);
   float tension_PPFD = value1 * 100;
   float PPFD = 5 * tension_PPFD;
   return PPFD;
 }
 
-// scale change neded to calculate radiation
 float fmap(float x, float in_min, float in_max, float out_min, float out_max) {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
@@ -74,6 +89,44 @@ float getTempSCD30() {
 
 float getHumSCD30() {
   return airSensor.getHumidity();
+}
+
+// Function that runs on core 0 to handle soil data collection
+void soilTask(void *parameter) {
+  for (;;) {
+    if (Serial.available()) {
+      String jsonData = Serial.readStringUntil('\n');  // Leer datos del Arduino Mega
+
+      // Parse JSON data
+      StaticJsonDocument<256> doc;
+      DeserializationError error = deserializeJson(doc, jsonData);
+
+      if (!error) {
+        // Lock the mutex before updating shared data
+        portENTER_CRITICAL(&soilDataMutex);
+
+        // Update the soil data structure
+        soilData.dielectric = doc["Dielectrico"];
+        soilData.moisture = doc["Volumen"];
+        soilData.conductivity = doc["Conductividad"];
+        soilData.temperature = doc["Temperature"];
+        soilData.solutionEC = doc["SolutionEC"];
+        soilData.porewaterEC = doc["PorewaterEC"];
+        soilData.dataReady = true;
+
+        // Release the mutex
+        portEXIT_CRITICAL(&soilDataMutex);
+      } else {
+        Serial.println("Error en el core");
+        Serial.println(xPortGetCoreID());
+        Serial.print("JSON parsing error: ");
+        Serial.println(error.c_str());
+      }
+    }
+
+    // Give other tasks some time to run
+    delay(100);
+  }
 }
 
 // Add a sensor reading to the JSON document only if it's valid
@@ -103,7 +156,6 @@ void sendToFiware(const String &jsonOutput) {
     // First try to create the entity
     http.begin(orionEndpoint);
     http.addHeader("Content-Type", "application/json");
-    // http.addHeader("fiware-service", fiwareService);
     http.addHeader("fiware-servicepath", fiwareServicePath);
 
     int httpResponseCode = http.POST(jsonOutput);
@@ -122,7 +174,6 @@ void sendToFiware(const String &jsonOutput) {
 
       http.begin(updateEndpoint);
       http.addHeader("Content-Type", "application/json");
-      // http.addHeader("fiware-service", fiwareService);
       http.addHeader("fiware-servicepath", fiwareServicePath);
 
       // Remove the id and type from the JSON for update
@@ -150,7 +201,6 @@ void sendToFiware(const String &jsonOutput) {
       Serial.print("PUT response code: ");
       Serial.println(httpResponseCode);
 
-      // 204 is a success code for PUT with no content returned
       if (httpResponseCode == 204) {
         Serial.println("Update successful (No Content)");
       }
@@ -183,6 +233,10 @@ void sendToFiware(const String &jsonOutput) {
 
 void setup() {
   Serial.begin(9600);
+
+  // Initialize soil data
+  soilData.dataReady = false;
+
   WiFi.begin(ssid, password);
 
   Serial.print("Conectando a Wi-Fi");
@@ -192,12 +246,21 @@ void setup() {
   }
   Serial.println("\nConectado a Wi-Fi");
 
-  // Initialize dht sensors.
+  // Initialize sensors
   dht1.begin();
   dht2.begin();
-
-  // initialize air sensor
   airSensor.begin();
+
+  // Create the soil task on Core 0
+  xTaskCreatePinnedToCore(
+    soilTask,         // Function to implement the task
+    "SoilTask",       // Name of the task
+    4096,             // Stack size in words
+    NULL,             // Task input parameter
+    1,                // Priority of the task
+    &soilTaskHandle,  // Task handle
+    0                 // Core where the task should run
+  );
 }
 
 void loop() {
@@ -211,27 +274,38 @@ void loop() {
   float dht11Temp = getTemperature(dht1);
   float dht22Temp = getTemperature(dht2);
   float dht22Hum = getHumidity(dht2);
+
+  // Get soil data safely using the mutex
   float soilDielectric = 0;
   float soilMoisture = 0;
   float soilConductivity = 0;
   float sSueloTemperatura = 0;
   float sSueloSolution = 0;
   float sSueloPorewater = 0;
+  bool hasSoilData = false;
 
-  if (Serial.available()) {
-    String jsonData = Serial.readStringUntil('\n');  // Leer datos del Arduino Mega
-    StaticJsonDocument<256> doc1;                    // Aumentar el tamaño si el JSON es más grande
-    deserializeJson(doc1, jsonData);
+  // Enter critical section
+  portENTER_CRITICAL(&soilDataMutex);
 
-    soilDielectric = doc1["Dielectrico"];
-    soilMoisture = doc1["Volumen"];
-    soilConductivity = doc1["Conductividad"];
-    sSueloTemperatura = doc1["Temperature"];
-    sSueloSolution = doc1["SolutionEC"];
-    sSueloPorewater = doc1["PorewaterEC"];
+  // Copy data from the shared structure
+  if (soilData.dataReady) {
+    soilDielectric = soilData.dielectric;
+    soilMoisture = soilData.moisture;
+    soilConductivity = soilData.conductivity;
+    sSueloTemperatura = soilData.temperature;
+    sSueloSolution = soilData.solutionEC;
+    sSueloPorewater = soilData.porewaterEC;
+    hasSoilData = true;
   }
+
+  // Exit critical section
+  portEXIT_CRITICAL(&soilDataMutex);
+
+  // Get other sensor readings
   float radiation = getRadiation();
-  delay(5000);
+
+  // Read air sensor
+  delay(1000);  // Give some time for SCD30 measurements
   int CO2 = readCO2();
   float scd30Temp = getTempSCD30();
   float scd30Hum = getHumSCD30();
@@ -242,12 +316,15 @@ void loop() {
   addSensorReading(doc, "sDHT22_Temperatura", dht22Temp);
   addSensorReading(doc, "sDHT22_Humedad", dht22Hum);
 
-  addSensorReading(doc, "sSuelo_Agua", soilMoisture);
-  addSensorReading(doc, "sSuelo_Dielectricidad", soilDielectric);
-  addSensorReading(doc, "sSuelo_Conductividad", soilConductivity);
-  addSensorReading(doc, "sSuelo_Temperatura", sSueloTemperatura);
-  addSensorReading(doc, "sSuelo_SolutionEC", sSueloSolution);
-  addSensorReading(doc, "sSuelo_Porewater", sSueloPorewater);
+  // Only add soil data if we have valid readings
+  if (hasSoilData) {
+    addSensorReading(doc, "sSuelo_Agua", soilMoisture);
+    addSensorReading(doc, "sSuelo_Dielectricidad", soilDielectric);
+    addSensorReading(doc, "sSuelo_Conductividad", soilConductivity);
+    addSensorReading(doc, "sSuelo_Temperatura", sSueloTemperatura);
+    addSensorReading(doc, "sSuelo_SolutionEC", sSueloSolution);
+    addSensorReading(doc, "sSuelo_Porewater", sSueloPorewater);
+  }
 
   addSensorReading(doc, "sRadiacion", radiation);
   addSensorReading(doc, "sAire_CO2", CO2);
@@ -260,7 +337,6 @@ void loop() {
 
   // Send the JSON to FIWARE Orion
   sendToFiware(jsonOutput);
-  // Serial.println(jsonOutput);
 
-  delay(4000);  // Send data every 10 seconds
+  delay(4000);  // Send data every 4 seconds
 }
