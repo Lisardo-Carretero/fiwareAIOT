@@ -1,31 +1,38 @@
 #include <ArduinoJson.h>
 
-void setup()
-{
-    Serial.begin(9600);
-
-    Serial.println("Arduino Mega listo para recibir datos...");
+void setup() {
+  Serial.begin(9600);  // Comunicación con el Arduino Mega (RX/TX)
+  Serial.println("ESP32 listo para recibir datos...");
 }
 
-void loop()
-{
-    // Verificar si hay datos disponibles desde el ESP32
-    if (Serial.available())
-    {
-        String jsonData = Serial.readStringUntil('\n'); // Leer los datos enviados por el ESP32
+void loop() {
+  if (Serial.available()) {
+    String jsonData = Serial.readStringUntil('\n');  // Leer datos del Arduino Mega
 
-        // Parsear el JSON recibido
-        StaticJsonDocument<128> doc;
-        DeserializationError error = deserializeJson(doc, jsonData);
+    // Parsear el JSON recibido
+    StaticJsonDocument<256> doc;  // Aumentar el tamaño si el JSON es más grande
+    deserializeJson(doc, jsonData);
 
-        // Extraer los valores del JSON
-        float temperature = doc["temperature"];
-        float humidity = doc["humidity"];
+    // Acceder a cada valor del JSON y mostrarlo en el monitor serie
+    float dielMean = doc["Dielectrico"];
+    float soilMoistMean = doc["Volumen"];
+    float bulkECMean = doc["Conductividad"];
+    float degCMean = doc["Temperature"];
+    float solutionECMean = doc["SolutionEC"];
+    float porewaterECMean = doc["PorewaterEC"];
 
-        // Mostrar los datos en el monitor serie
-        Serial.print("Temperatura: ");
-        Serial.println(temperature);
-        Serial.print("Humedad: ");
-        Serial.println(humidity);
-    }
+    Serial.println("Datos recibidos:");
+    Serial.print("Temperatura: ");
+    Serial.println(degCMean);
+    Serial.print("Componente Dielectrica: ");
+    Serial.println(dielMean);
+    Serial.print("Volumen: ");
+    Serial.println(soilMoistMean);
+    Serial.print("Conductividad: ");
+    Serial.println(bulkECMean);
+    Serial.print("Solution EC: ");
+    Serial.println(solutionECMean);
+    Serial.print("Porewater EC: ");
+    Serial.println(porewaterECMean);
+  }
 }

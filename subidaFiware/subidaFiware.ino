@@ -75,7 +75,7 @@ float getSoilTemperature()
 
 float getRadiation()
 {
-  sensorValue1 = analogRead(sensorPin6); // realizar la lectura
+  sensorValue1 = analogRead(sensorPin6);          // realizar la lectura
   value1 = fmap(sensorValue1, 0, 1023, 0.0, 5.0); // cambiar escala a 0.0 - 5.0
   float tension_PPFD = value1 * 100;
   float PPFD = 5 * tension_PPFD;
@@ -255,10 +255,17 @@ void loop()
   float dht11Temp = getTemperature(dht1);
   float dht22Temp = getTemperature(dht2);
   float dht22Hum = getHumidity(dht2);
-  float soilMoisture = getSoilMoisture();
-  float soilDielectric = getSoilDielectric();
-  float soilConductivity = getSoilConductivity();
-  float soilTemp = getSoilTemperature();
+  float soilDielectric = -1.0;
+  if (Serial.available())
+  {
+    String jsonData = Serial.readStringUntil('\n'); // Leer datos del Arduino Mega
+    soilDielectric = doc["Dielectrico"];
+    float soilMoisture = doc["Volumen"];
+    float soilConductivity = doc["Conductividad"];
+    float sSueloTemperatura = doc["Temperature"];
+    float sSueloSolution = doc["SolutionEC"];
+    float sSueloPoorwater = doc["PorewaterEC"];
+  }
   float radiation = getRadiation();
   delay(5000);
   int CO2 = readCO2();
@@ -270,10 +277,18 @@ void loop()
   addSensorReading(doc, "sDHT11_Humedad", dht11Hum);
   addSensorReading(doc, "sDHT22_Temperatura", dht22Temp);
   addSensorReading(doc, "sDHT22_Humedad", dht22Hum);
-  addSensorReading(doc, "sSuelo_Agua", soilMoisture);
-  addSensorReading(doc, "sSuelo_Dielectricidad", soilDielectric);
-  addSensorReading(doc, "sSuelo_Conductividad", soilConductivity);
-  addSensorReading(doc, "sSuelo_Temperatura", soilTemp);
+
+  if (soilDielectric != -1.0)
+  {
+
+    addSensorReading(doc, "sSuelo_Agua", soilMoisture);
+    addSensorReading(doc, "sSuelo_Dielectricidad", soilDielectric);
+    addSensorReading(doc, "sSuelo_Conductividad", soilConductivity);
+    addSensorReading(doc, "sSuelo_Temperatura", soilTemp);
+    addSensorReading(doc, "sSuelo_SolutionEC", sSuelo_Solution);
+    addSensorReading(doc, "sSuelo_Poorwater", sSueloPoorwater);
+  }
+
   addSensorReading(doc, "sRadiacion", radiation);
   addSensorReading(doc, "sAire_CO2", CO2);
   addSensorReading(doc, "sAire_Temperatura", scd30Temp);
